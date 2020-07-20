@@ -9,6 +9,14 @@ select database();
 
 show tables;
 
+Describe departments;
+Describe dept_emp;
+Describe dept_manager;
+Describe employees;
+Describe employees_with_departments;
+Describe salaries;
+Describe titles;
+
 show create database employees;
 
 #5. Date, VARCHAR, CHAR, and INT
