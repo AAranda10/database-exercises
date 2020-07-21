@@ -16,7 +16,7 @@ where release_date between 1990 and 1999;
 
 #5
 select name from albums
-where sales > 20;
+where sales < 20;
 
 #6
 select name from albums
