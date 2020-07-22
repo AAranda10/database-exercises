@@ -41,4 +41,4 @@ select min(salary) from salaries;
 
 #6
 select concat(lower(substr(first_name, 1, 1)), lower(substr(last_name, 1, 4)), '_',
-lower(substr(birth_date, 6, 7)), lower(substr(birth_date, 2, 0))) as username from employees;
+month(birth_date), lower(substr(year(birth_date, 3, 2))) as username from employees;
