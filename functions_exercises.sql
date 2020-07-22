@@ -38,3 +38,7 @@ select max(salary) from salaries;
 
 #5b
 select min(salary) from salaries;
+
+#6
+select concat(lower(substr(first_name, 1, 1)), lower(substr(last_name, 1, 4)), '_',
+lower(substr(birth_date, 6, 7)), lower(substr(birth_date, 2, 0))) as username from employees;
