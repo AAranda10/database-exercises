@@ -24,7 +24,7 @@ join dept_emp as d
 on t.emp_no = d.emp_no
 join departments as dpt
 on d.dept_no = dpt.dept_no
-where t.to_date > curdate() and dpt.dept_no = 'd009'
+where t.to_date > curdate() and dpt.dept_no = 'd009' and d.to_date > curdate()
 group by title;
 
 #5
