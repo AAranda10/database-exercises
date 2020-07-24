@@ -46,13 +46,14 @@ where de.to_date > curdate()
 group by d.dept_no;
 
 #7
-select d.dept_name, avg(s.salary) from salaries as s
+select distinct d.dept_name, avg(s.salary) from salaries as s
 join dept_emp as dpt
 on s.emp_no = dpt.emp_no
 join departments as d
 on d.dept_no = dpt.dept_no
-where s.to_date > curdate()
-group by d.dept_name;
+where s.to_date > curdate() and dpt.to_date > curdate()
+group by d.dept_name desc
+limit 1;
 
 #8
 select distinct ed.first_name, ed.last_name, s.salary from employees_with_departments as ed
