@@ -53,3 +53,25 @@ join departments as d
 on d.dept_no = dpt.dept_no
 where s.to_date > curdate()
 group by d.dept_name;
+
+#8
+select distinct ed.first_name, ed.last_name, s.salary from employees_with_departments as ed
+join dept_emp as de
+on de.dept_no = ed.dept_no
+join salaries as s
+on s.emp_no = ed.emp_no
+where s.to_date > curdate() and de.dept_no = 'd001'
+order by salary desc
+limit 1;
+
+#9
+select distinct e.first_name, e.last_name, s.salary, d.dept_name from employees as e
+join salaries as s
+on s.emp_no = e.emp_no
+join dept_manager as dpm
+on dpm.emp_no = e.emp_no
+join departments as d
+on d.dept_no = dpm.dept_no
+where s.to_date > curdate() and dpm.to_date > curdate()
+order by s.salary desc
+limit 1;
