@@ -33,4 +33,8 @@ WHERE s.salary > (
     SELECT avg(average.salary)
     FROM salaries as average)
 and s.to_Date > curdate();
-;
+
+#6
+select * from salaries
+where salary > ( select max(salary) from salaries) - (select stddev(salary)from salaries)
+and to_date > curdate();
